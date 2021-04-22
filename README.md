@@ -3,7 +3,7 @@
 A new Flutter project.
 
 ## Something you need to run 
- This project using grpc so you need to install protoc to generate class
+ This project using grpc so you need to install protoc to generate class 
  Read guide.txt in  grpc folder to see more
 
 ## Getting Started
