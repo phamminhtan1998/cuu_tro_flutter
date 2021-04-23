@@ -1,4 +1,5 @@
 import 'package:cuu_tro_flutter/common/size_config.dart';
+import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/widgets/custom_text_field.dart';
 import 'package:cuu_tro_flutter/widgets/default_button.dart';
@@ -15,28 +16,18 @@ class _LocationFormState extends State<LocationForm> {
 
   TextEditingController txtLocation= new TextEditingController();
   RegisterStepperCtrl registerStepperCtrl = Get.find();
+  AccountController accountController = Get.find();
 
   final List<String> errors = [];
-
-  void addError({String error}) {
-    if (!errors.contains(error))
-      setState(() {
-        errors.add(error);
-      });
-  }
-
-  void removeError({String error}) {
-    if (errors.contains(error))
-      setState(() {
-        errors.remove(error);
-      });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Form(key: _formKey, child: Column(
       children: [
-        CustomTextField.create(txtLocation, "Location", "Enter your location !"),
+        CustomTextField.create(txtLocation, "Location",
+            accountController.account.value.location == null
+                ? ""
+                : accountController.account.value.location,
+            altIcon: Icon(Icons.location_on_outlined)),
         SizedBox(height: getProportionateScreenHeight(30)),
         Container(
           height: 400,
@@ -53,7 +44,6 @@ class _LocationFormState extends State<LocationForm> {
             registerStepperCtrl.index.value=3;
           },
         ),
-
       ],
     ));
   }

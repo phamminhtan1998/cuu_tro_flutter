@@ -1,9 +1,11 @@
 import 'package:cuu_tro_flutter/common/constants.dart';
 import 'package:cuu_tro_flutter/common/size_config.dart';
+import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/page/register/detail/register_detail_form.dart';
 import 'package:cuu_tro_flutter/page/register/select_type/register_form.dart';
 import 'package:cuu_tro_flutter/widgets/socal_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterDetailBody extends StatefulWidget {
   @override
@@ -11,7 +13,6 @@ class RegisterDetailBody extends StatefulWidget {
 }
 
 class _RegisterDetailBodyState extends State<RegisterDetailBody> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(

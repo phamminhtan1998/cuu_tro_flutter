@@ -32,11 +32,11 @@ class RegisterBody extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SocalCard(
+                    SocialCard(
                       icon: "assets/icons/google-icon.svg",
                       press: () {},
                     ),
-                    SocalCard(
+                    SocialCard(
                       icon: "assets/icons/facebook-2.svg",
                       press: () {},
                     )
