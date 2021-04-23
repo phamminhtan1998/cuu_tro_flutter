@@ -1,34 +1,18 @@
 import 'package:cuu_tro_flutter/common/size_config.dart';
+import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/widgets/custom_text_field.dart';
 import 'package:cuu_tro_flutter/widgets/default_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class RegisterDetailForm extends StatefulWidget {
-  @override
-  _RegisterDetailFormState createState() => _RegisterDetailFormState();
-}
+class RegisterDetailForm extends StatelessWidget {
 
-class _RegisterDetailFormState extends State<RegisterDetailForm> {
+  RegisterStepperCtrl registerStepperCtrl = Get.find();
   final _formKey = GlobalKey<FormState>();
   TextEditingController txtFullName= new TextEditingController();
   TextEditingController txtPhoneNumber= new TextEditingController();
   TextEditingController txtDob= new TextEditingController();
   final List<String> errors = [];
-
-  void addError({String error}) {
-    if (!errors.contains(error))
-      setState(() {
-        errors.add(error);
-      });
-  }
-
-  void removeError({String error}) {
-    if (errors.contains(error))
-      setState(() {
-        errors.remove(error);
-      });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Form(key: _formKey, child: Column(
@@ -42,6 +26,7 @@ class _RegisterDetailFormState extends State<RegisterDetailForm> {
         DefaultButton(
           text: "Continue",
           press: () {
+            registerStepperCtrl.index.value=2;
           },
         ),
 

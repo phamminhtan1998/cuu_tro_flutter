@@ -1,9 +1,11 @@
 import 'package:cuu_tro_flutter/common/constants.dart';
 import 'package:cuu_tro_flutter/common/size_config.dart';
+import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/widgets/custom_surfix_icon.dart';
 import 'package:cuu_tro_flutter/widgets/default_button.dart';
 import 'package:cuu_tro_flutter/widgets/form_error.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterForm extends StatefulWidget {
   @override
@@ -11,6 +13,7 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
+  RegisterStepperCtrl registerStepperCtrl = Get.find();
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -48,9 +51,7 @@ class _RegisterFormState extends State<RegisterForm> {
           DefaultButton(
             text: "Continue",
             press: () {
-              setState(() {
-
-              });
+             registerStepperCtrl.index.value=1;
             },
           ),
         ],
