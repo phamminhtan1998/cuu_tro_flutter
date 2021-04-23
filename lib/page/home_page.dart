@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return BottomBars(
       backgroundBarColor: Colors.white70,
-      canDrag: true,
+      canDrag: false,
       type: BottomBarsType.Animated,
       items: [
         BottomBarsItem(
