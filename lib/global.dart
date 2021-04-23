@@ -1,5 +1,5 @@
-library cuutro.global;
-
-import 'package:flutter/cupertino.dart';
-
-GlobalKey<NavigatorState> appNavigator;
+// library cuutro.global;
+//
+// import 'package:flutter/material.dart';
+//
+// GlobalKey<NavigatorState> appNavigator;
