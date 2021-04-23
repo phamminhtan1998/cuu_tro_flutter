@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "853177425491",
+    "project_id": "mientrung-7a780",
+    "storage_bucket": "mientrung-7a780.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853177425491:android:908bf1a72f9aedbb1b70a6",
+        "android_client_info": {
+          "package_name": "com.example.cuu_tro_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853177425491-drn0knp9nd1mtni1aboi1a3hr793hqtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cuu_tro_flutter",
+            "certificate_hash": "b878a23b8f556edb064982b65a355c008048f35a"
+          }
+        },
+        {
+          "client_id": "853177425491-0k2nt366mppkv0tf9au6f0oi27102fab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkPlyexUzGgAUwLroPXi45wWx4hq4qQWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853177425491-0k2nt366mppkv0tf9au6f0oi27102fab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,12 @@
 import 'package:bottom_bars/bottom_bars.dart';
-import 'package:cuu_tro_flutter/second_page.dart';
+import 'package:cuu_tro_flutter/page/account/account_page.dart';
+import 'package:cuu_tro_flutter/page/forecast/forecast_page.dart';
+import 'package:cuu_tro_flutter/page/news/news_page.dart';
+import 'package:cuu_tro_flutter/page/sos/request_rescue_page.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
-import '../global.dart' as globals;
+import '../common/custom_colors.dart' as CustomColors;
 
 class HomePage extends StatefulWidget {
   static String routeName = "/home_page";
@@ -13,6 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  String pushToken = "";
+  String playerIds= "";
   static final String oneSignalId = "648898a1-1861-467d-81f4-9dee88aba5eb";
   @override
   void initState() {
@@ -24,44 +29,44 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return BottomBars(
+      backgroundBarColor: Colors.white70,
+      canDrag: true,
+      type: BottomBarsType.Animated,
       items: [
         BottomBarsItem(
-          page: Scaffold(
-            floatingActionButton: FloatingActionButton(onPressed: () {}),
-          ),
+          page: NewsPage(),
           item: Item(
-            icon: Icons.group,
-            title: Text("Group"),
-          ),
-        ),
-        BottomBarsItem(
-          page: Scaffold(
-            appBar: AppBar(
-              title: Text("Audio"),
-            ),
-            floatingActionButton: FloatingActionButton(onPressed: () {}),
-          ),
-          item: Item(
-            icon: Icons.ac_unit_outlined,
-            title: Text("Audio"),
-          ),
-        ),
-        BottomBarsItem(
-          page: Scaffold(backgroundColor: Colors.yellow),
-          item: Item(
-            icon: Icons.home,
-            title: Text("Home"),
+            icon: LineIcons.newspaper,
+            title: Text("News"),
             color: Colors.grey,
             activeColor: Colors.yellow,
           ),
         ),
         BottomBarsItem(
-          page: Scaffold(backgroundColor: Colors.red),
+          page: ForecastPage(),
           item: Item(
-            icon: Icons.settings,
-            title: Text("Settings"),
+            icon: LineIcons.cloud,
+            title: Text("Weather"),
+            color: Colors.grey,
+            activeColor: Colors.blue,
+          ),
+        ),
+        BottomBarsItem(
+          page: RequestRescuePage(),
+          item: Item(
+            icon: LineIcons.lightningBolt,
+            title: Text("SOS"),
             color: Colors.grey,
             activeColor: Colors.red,
+          ),
+        ),
+        BottomBarsItem(
+          page: AccountPage(),
+          item: Item(
+            icon: Icons.account_circle_outlined,
+            title: Text("Account"),
+            color: Colors.grey,
+            activeColor: Colors.green,
           ),
         ),
       ],
@@ -74,6 +79,11 @@ class _HomePageState extends State<HomePage> {
         .setInFocusDisplayType(OSNotificationDisplayType.notification);
     OneSignal.shared.setNotificationOpenedHandler((openedResult) {
       var message = openedResult.notification.payload.additionalData;
+    });
+    // Need token and playerId to push message ;
+    OneSignal.shared.getPermissionSubscriptionState().then((value){
+      playerIds= value.subscriptionStatus.userId;
+      pushToken= value.subscriptionStatus.pushToken;
     });
   }
 }

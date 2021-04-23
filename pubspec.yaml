@@ -20,6 +20,10 @@ dependencies:
   bottom_bars: ^1.1.0
   get: ^4.1.4
   flutter_svg: ^0.19.1
+  google_sign_in: ^5.0.2
+  geolocator: ^7.0.3
+  dotted_line: ^3.0.0
+  line_icons: ^2.0.1
 
 
 dev_dependencies:

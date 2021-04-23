@@ -1,7 +1,7 @@
 
 import 'package:cuu_tro_flutter/common/constants.dart';
 import 'package:cuu_tro_flutter/common/size_config.dart';
-import 'package:cuu_tro_flutter/page/register/register_form.dart';
+import 'package:cuu_tro_flutter/page/register/select_type/register_form.dart';
 import 'package:cuu_tro_flutter/widgets/socal_card.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +10,13 @@ class RegisterBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SizedBox(
-        width: double.infinity,
         child: Padding(
           padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          EdgeInsets.only(
+            left: getProportionateScreenWidth(20),
+            right: getProportionateScreenWidth(20),
+            bottom: getProportionateScreenWidth(40),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -36,11 +39,7 @@ class RegisterBody extends StatelessWidget {
                     SocalCard(
                       icon: "assets/icons/facebook-2.svg",
                       press: () {},
-                    ),
-                    SocalCard(
-                      icon: "assets/icons/twitter.svg",
-                      press: () {},
-                    ),
+                    )
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),

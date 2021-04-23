@@ -48,6 +48,9 @@ class _RegisterFormState extends State<RegisterForm> {
           DefaultButton(
             text: "Continue",
             press: () {
+              setState(() {
+
+              });
             },
           ),
         ],

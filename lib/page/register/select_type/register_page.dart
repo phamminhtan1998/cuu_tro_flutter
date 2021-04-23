@@ -1,4 +1,4 @@
-import 'package:cuu_tro_flutter/page/register/register_body.dart';
+import 'package:cuu_tro_flutter/page/register/select_type/register_body.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -6,10 +6,6 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Register"),
-        centerTitle: true,
-      ),
       body: RegisterBody(),
     );
   }

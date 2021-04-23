@@ -1,8 +1,10 @@
 import 'package:cuu_tro_flutter/common/constants.dart';
 import 'package:cuu_tro_flutter/common/size_config.dart';
-import 'package:cuu_tro_flutter/page/register/register_page.dart';
+import 'package:cuu_tro_flutter/page/register/select_type/register_page.dart';
+import 'package:cuu_tro_flutter/page/stepper/register_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import '../common/custom_colors.dart' as CustomColor;
 
 class NoAccountText extends StatelessWidget {
   const NoAccountText({
@@ -20,7 +22,7 @@ class NoAccountText extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Get.toNamed(RegisterPage.routeName);
+            Get.toNamed(RegisterStepper.routeName);
           },
           child: Text(
             "Sign Up",

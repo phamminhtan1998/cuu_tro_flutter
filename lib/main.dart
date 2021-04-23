@@ -1,15 +1,20 @@
 
 import 'package:cuu_tro_flutter/page/home_page.dart';
 import 'package:cuu_tro_flutter/page/login/login_page.dart';
-import 'package:cuu_tro_flutter/router/custome_route.dart';
+import 'package:cuu_tro_flutter/page/register/detail/register_detail.dart';
+import 'package:cuu_tro_flutter/page/stepper/register_stepper.dart';
+import 'package:cuu_tro_flutter/router/custom_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import 'common/custome_colors.dart' as CustomeColors;
+import 'common/custom_colors.dart' as CustomeColors;
 
 // @dart=2.9
 void main() {
 
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: CustomeColors.kPrimaryColor));
 
   runApp(GetMaterialApp(
     theme: ThemeData(
@@ -19,7 +24,7 @@ void main() {
           color: CustomeColors.kPrimaryColor,
         )),
     initialRoute: LoginPage.routeName,
-    getPages: CustomeRoute.routes,
+    getPages: CustomRoute.routes,
     defaultTransition: Transition.rightToLeft,
     debugShowCheckedModeBanner: false,
   ));
