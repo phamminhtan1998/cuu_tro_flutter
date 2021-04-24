@@ -3,7 +3,9 @@ import 'package:cuu_tro_flutter/page/account/account_page.dart';
 import 'package:cuu_tro_flutter/page/forecast/forecast_page.dart';
 import 'package:cuu_tro_flutter/page/news/news_page.dart';
 import 'package:cuu_tro_flutter/page/sos/request_rescue_page.dart';
+import 'package:cuu_tro_flutter/page/stepper/register_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import '../common/custom_colors.dart' as CustomColors;
@@ -79,8 +81,8 @@ class _HomePageState extends State<HomePage> {
         .setInFocusDisplayType(OSNotificationDisplayType.notification);
     OneSignal.shared.setNotificationOpenedHandler((openedResult) {
       var message = openedResult.notification.payload.additionalData;
+      Get.toNamed(RegisterStepper.routeName);
     });
-    // Need token and playerId to push message ;
     OneSignal.shared.getPermissionSubscriptionState().then((value){
       playerIds= value.subscriptionStatus.userId;
       pushToken= value.subscriptionStatus.pushToken;

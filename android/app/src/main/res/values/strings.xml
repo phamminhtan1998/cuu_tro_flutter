@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cứu trợ</string>
+    <string name="facebook_app_id">289201616036941</string>
+    <string name="fb_login_protocol_scheme">fb289201616036941</string>
+</resources>

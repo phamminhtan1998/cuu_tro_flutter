@@ -42,7 +42,7 @@ class RegisterDetailForm extends StatelessWidget {
               CustomTextField.create(
                   txtDob, "Date Of Birth",
                   accountController.account.value.dob == null
-                      ? ""
+                      ? "Enter with pattern yyyy/mm/dd"
                       : accountController.account.value.dob,
                   typeKeyboard: TextInputType.datetime,
                   altIcon: Icon(Icons.cake_outlined)),
