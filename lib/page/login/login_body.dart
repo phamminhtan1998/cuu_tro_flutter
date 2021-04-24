@@ -2,6 +2,7 @@ import 'package:cuu_tro_flutter/common/size_config.dart';
 import 'package:cuu_tro_flutter/dao/entity/account.dart';
 import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
+import 'package:cuu_tro_flutter/getx/shared_preference/shared_preference_ctrl.dart';
 import 'package:cuu_tro_flutter/page/login/login_form.dart';
 import 'package:cuu_tro_flutter/page/stepper/register_stepper.dart';
 import 'package:cuu_tro_flutter/widgets/no_account_text.dart';
