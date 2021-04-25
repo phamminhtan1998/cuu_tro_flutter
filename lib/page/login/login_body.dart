@@ -20,9 +20,9 @@ class LoginBody extends StatelessWidget {
       'https://www.googleapis.com/auth/contacts.readonly',
     ],
   );
-  RegisterStepperCtrl registerStepperCtrl = Get.put(RegisterStepperCtrl());
+  RegisterStepperCtrl registerStepperCtrl = Get.find();
   //TODO: move to home page when finish
-  AccountController accountController = Get.put(AccountController());
+  AccountController accountController = Get.find();
   Account account = new Account();
 
   @override

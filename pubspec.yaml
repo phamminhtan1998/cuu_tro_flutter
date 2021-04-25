@@ -19,7 +19,7 @@ dependencies:
   onesignal_flutter: ^2.6.3
   bottom_bars: ^1.1.0
   get: ^4.1.4
-  flutter_svg: ^0.19.1
+  flutter_svg: ^0.22.0
   google_sign_in: ^5.0.2
   geolocator: ^7.0.3
   dotted_line: ^3.0.0
@@ -27,7 +27,18 @@ dependencies:
   flutter_facebook_auth: ^3.3.3+1
   intl: ^0.17.0
   shared_preferences: ^2.0.5
+  cached_network_image: ^3.0.0
+  url_launcher: ^6.0.3
+  dio: ^4.0.0
+  flutter_native_splash: ^1.1.8+4
+  flutter_isolate: ^2.0.0
 
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/splash_final.png
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:
@@ -51,3 +62,5 @@ flutter:
           weight: 700
         - asset: assets/fonts/muli/Muli-Light.ttf
           weight: 300
+
+

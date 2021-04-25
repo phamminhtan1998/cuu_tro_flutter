@@ -66,4 +66,9 @@ class Account {
     "pushToken": pushToken,
     "avatarUrl": avatarUrl,
   };
+
+  @override
+  String toString() {
+    return 'Account{fullName: $fullName, dob: $dob, location: $location, lat: $lat, lon: $lon, accountIdf: $accountIdf, password: $password, accountType: $accountType, phoneNumber: $phoneNumber, playerId: $playerId, pushToken: $pushToken, avatarUrl: $avatarUrl}';
+  }
 }

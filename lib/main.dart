@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'common/custom_colors.dart' as CustomeColors;
+import 'getx/form/errors_login_form_ctrl.dart';
 
 // @dart=2.9
 void main() {
@@ -23,7 +24,7 @@ void main() {
         appBarTheme: AppBarTheme(
           color: CustomeColors.kPrimaryColor,
         )),
-    initialRoute: LoginPage.routeName,
+    initialRoute: HomePage.routeName,
     getPages: CustomRoute.routes,
     defaultTransition: Transition.rightToLeft,
     debugShowCheckedModeBanner: false,
@@ -40,7 +41,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
     );
   }
 }

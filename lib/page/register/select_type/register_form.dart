@@ -1,5 +1,6 @@
 import 'package:cuu_tro_flutter/common/constants.dart';
 import 'package:cuu_tro_flutter/common/size_config.dart';
+import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/widgets/custom_surfix_icon.dart';
 import 'package:cuu_tro_flutter/widgets/default_button.dart';
@@ -14,6 +15,7 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   RegisterStepperCtrl registerStepperCtrl = Get.find();
+  AccountController accountController = Get.find();
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -41,17 +43,18 @@ class _RegisterFormState extends State<RegisterForm> {
       key: _formKey,
       child: Column(
         children: [
-          buildEmailFormField(),
+          Obx(()=> buildEmailFormField()),
           SizedBox(height: getProportionateScreenHeight(30)),
-          buildPasswordFormField(),
+          Obx(()=> buildPasswordFormField()),
           SizedBox(height: getProportionateScreenHeight(30)),
-          buildConformPassFormField(),
+          Obx(()=> buildConformPassFormField()),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
             text: "Continue",
             press: () {
-             registerStepperCtrl.index.value=1;
+              print(accountController.account.value.accountIdf);
+              registerStepperCtrl.index.value = 1;
             },
           ),
         ],
@@ -83,10 +86,15 @@ class _RegisterFormState extends State<RegisterForm> {
       },
       decoration: InputDecoration(
         labelText: "Confirm Password",
-        hintText: "Re-enter your password",
+        hintText: accountController.account.value.accountIdf == null
+            ? "Enter your password"
+            : "Hidden Password",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
+        enabled: accountController.account.value.accountIdf == null
+            ? true
+            : false,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
       ),
     );
@@ -96,6 +104,9 @@ class _RegisterFormState extends State<RegisterForm> {
     return TextFormField(
       obscureText: true,
       onSaved: (newValue) => password = newValue,
+      enabled: accountController.account.value.accountIdf == null
+          ? true
+          : false,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
@@ -116,7 +127,9 @@ class _RegisterFormState extends State<RegisterForm> {
       },
       decoration: InputDecoration(
         labelText: "Password",
-        hintText: "Enter your password",
+        hintText: accountController.account.value.accountIdf == null
+            ? "Enter your password"
+            : "Hidden password",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -127,7 +140,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.text,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -149,7 +162,9 @@ class _RegisterFormState extends State<RegisterForm> {
       },
       decoration: InputDecoration(
         labelText: "Email",
-        hintText: "Enter your email",
+        hintText: accountController.account.value.accountIdf == null
+            ? "Enter your user name"
+            : accountController.account.value.accountIdf,
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -158,4 +173,3 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 }
-

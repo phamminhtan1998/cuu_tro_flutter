@@ -1,4 +1,8 @@
 import 'package:bottom_bars/bottom_bars.dart';
+import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
+import 'package:cuu_tro_flutter/getx/form/errors_login_form_ctrl.dart';
+import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
+import 'package:cuu_tro_flutter/getx/shared_preference/shared_preference_ctrl.dart';
 import 'package:cuu_tro_flutter/page/account/account_page.dart';
 import 'package:cuu_tro_flutter/page/forecast/forecast_page.dart';
 import 'package:cuu_tro_flutter/page/news/news_page.dart';
@@ -9,6 +13,7 @@ import 'package:get/route_manager.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import '../common/custom_colors.dart' as CustomColors;
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   static String routeName = "/home_page";
@@ -18,14 +23,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  String pushToken = "";
-  String playerIds= "";
   static final String oneSignalId = "648898a1-1861-467d-81f4-9dee88aba5eb";
+
+  AccountController accountController = Get.put(AccountController());
+  SharedPreferenceCtrl sharedPreferenceCtrl = Get.put(SharedPreferenceCtrl());
+  RegisterStepperCtrl registerStepperCtrl = Get.put(RegisterStepperCtrl());
+  ErrorsLoginFormCtrl errorsLoginFormCtrl = Get.put(ErrorsLoginFormCtrl());
   @override
-  void initState() {
+  void initState()  {
     // TODO: implement initState
     super.initState();
     initPlatformState();
+    sharedPreferenceCtrl.getAccount();
   }
 
   @override
@@ -70,6 +79,7 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey,
             activeColor: Colors.green,
           ),
+
         ),
       ],
     );
@@ -84,8 +94,8 @@ class _HomePageState extends State<HomePage> {
       Get.toNamed(RegisterStepper.routeName);
     });
     OneSignal.shared.getPermissionSubscriptionState().then((value){
-      playerIds= value.subscriptionStatus.userId;
-      pushToken= value.subscriptionStatus.pushToken;
+      // playerIds= value.subscriptionStatus.userId;
+      // pushToken= value.subscriptionStatus.pushToken;
     });
   }
 }
