@@ -1,5 +1,5 @@
 import 'package:cuu_tro_flutter/common/api_common.dart';
-import 'package:cuu_tro_flutter/dao/entity/account.dart';
+import 'package:cuu_tro_flutter/getx/account/account.dart';
 import 'package:dio/dio.dart';
 
 class AccountHelper{

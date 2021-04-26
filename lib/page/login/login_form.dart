@@ -1,6 +1,6 @@
 import 'package:cuu_tro_flutter/common/constants.dart';
 import 'package:cuu_tro_flutter/common/size_config.dart';
-import 'package:cuu_tro_flutter/dao/entity/account.dart';
+import 'package:cuu_tro_flutter/getx/account/account.dart';
 import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/getx/form/errors_login_form_ctrl.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';

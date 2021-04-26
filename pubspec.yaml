@@ -32,6 +32,9 @@ dependencies:
   dio: ^4.0.0
   flutter_native_splash: ^1.1.8+4
   flutter_isolate: ^2.0.0
+  webview_flutter: ^2.0.4
+  diffutil_sliverlist: ^0.5.0
+  expandable: ^5.0.1
 
 
 flutter_native_splash:

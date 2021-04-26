@@ -4,6 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:line_icons/line_icons.dart';
 
 class NewsPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

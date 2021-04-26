@@ -1,5 +1,5 @@
 import 'package:cuu_tro_flutter/common/size_config.dart';
-import 'package:cuu_tro_flutter/dao/entity/account.dart';
+import 'package:cuu_tro_flutter/getx/account/account.dart';
 import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/getx/shared_preference/shared_preference_ctrl.dart';
@@ -23,6 +23,7 @@ class LoginBody extends StatelessWidget {
   RegisterStepperCtrl registerStepperCtrl = Get.find();
   //TODO: move to home page when finish
   AccountController accountController = Get.find();
+  SharedPreferenceCtrl  sharedPreferenceCtrl= Get.find();
   Account account = new Account();
 
   @override
@@ -63,9 +64,9 @@ class LoginBody extends StatelessWidget {
                         press: () async {
                           bool response = await logInWithGG();
                           if (response) {
+                            Get.toNamed(RegisterStepper.routeName);
                             registerStepperCtrl.index.value = 1;
                             accountController.account.value = account;
-                            Get.toNamed(RegisterStepper.routeName);
                           }
                         }),
                     SocialCard(
@@ -73,9 +74,9 @@ class LoginBody extends StatelessWidget {
                         press: () async {
                           bool response = await logInWithFB();
                           if (response) {
+                            Get.toNamed(RegisterStepper.routeName);
                             registerStepperCtrl.index.value = 1;
                             accountController.account.value = account;
-                            Get.toNamed(RegisterStepper.routeName);
                           }
                           else{
                             print('Some thing wrong');
@@ -130,7 +131,7 @@ class LoginBody extends StatelessWidget {
         }
         account.avatarUrl= userData['picture']["data"]["url"];
         print('========================================================');
-        print(account.toString());
+        print(userData.toString());
         return true;
       }
       print(result.status);

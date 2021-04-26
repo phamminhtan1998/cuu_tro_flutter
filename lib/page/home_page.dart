@@ -1,5 +1,6 @@
 import 'package:bottom_bars/bottom_bars.dart';
 import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
+import 'package:cuu_tro_flutter/getx/expanded/expanded_controller.dart';
 import 'package:cuu_tro_flutter/getx/form/errors_login_form_ctrl.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/getx/shared_preference/shared_preference_ctrl.dart';
@@ -29,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   SharedPreferenceCtrl sharedPreferenceCtrl = Get.put(SharedPreferenceCtrl());
   RegisterStepperCtrl registerStepperCtrl = Get.put(RegisterStepperCtrl());
   ErrorsLoginFormCtrl errorsLoginFormCtrl = Get.put(ErrorsLoginFormCtrl());
+  ExpandedController expandedController = Get.put(ExpandedController());
   @override
   void initState()  {
     // TODO: implement initState

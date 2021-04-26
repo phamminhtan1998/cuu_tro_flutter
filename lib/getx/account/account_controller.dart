@@ -1,4 +1,4 @@
-import 'package:cuu_tro_flutter/dao/entity/account.dart';
+import 'package:cuu_tro_flutter/getx/account/account.dart';
 import 'package:cuu_tro_flutter/helper/account/account_helper.dart';
 import 'package:get/get.dart';
 
