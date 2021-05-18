@@ -5,7 +5,7 @@ import 'package:cuu_tro_flutter/getx/form/errors_login_form_ctrl.dart';
 import 'package:cuu_tro_flutter/getx/news/news_controller.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/getx/shared_preference/shared_preference_ctrl.dart';
-import 'package:cuu_tro_flutter/grpc/hello/hello_grpc.dart';
+// import 'package:cuu_tro_flutter/grpc/hello/hello_grpc.dart';
 import 'package:cuu_tro_flutter/page/account/account_page.dart';
 import 'package:cuu_tro_flutter/page/forecast/forecast_page.dart';
 import 'package:cuu_tro_flutter/page/news/news_page.dart';

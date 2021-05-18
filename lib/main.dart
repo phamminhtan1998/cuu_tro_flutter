@@ -1,5 +1,5 @@
 
-import 'package:cuu_tro_flutter/grpc/hello/hello_grpc.dart';
+// import 'package:cuu_tro_flutter/grpc/hello/hello_grpc.dart';
 import 'package:cuu_tro_flutter/page/home_page.dart';
 import 'package:cuu_tro_flutter/page/login/login_page.dart';
 import 'package:cuu_tro_flutter/page/news/news_page.dart';
