@@ -9,6 +9,8 @@ String newsToJson(News data) => json.encode(data.toJson());
 class News {
   News({
     this.id,
+    this.createdAt,
+    this.avatar,
     this.title,
     this.description,
     this.shortDescription,
@@ -21,6 +23,8 @@ class News {
   });
 
   String id;
+  DateTime createdAt;
+  String avatar;
   String title;
   String description;
   String shortDescription;
@@ -33,6 +37,8 @@ class News {
 
   factory News.fromJson(Map<String, dynamic> json) => News(
     id: json["id"],
+    createdAt: DateTime.parse(json["createdAt"]),
+    avatar: json["avatar"],
     title: json["title"],
     description: json["description"],
     shortDescription: json["shortDescription"],
@@ -46,6 +52,8 @@ class News {
 
   Map<String, dynamic> toJson() => {
     "id": id,
+    "createdAt": createdAt.toIso8601String(),
+    "avatar": avatar,
     "title": title,
     "description": description,
     "shortDescription": shortDescription,

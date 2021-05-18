@@ -2,6 +2,7 @@ import 'package:cuu_tro_flutter/page/account/account_page.dart';
 import 'package:cuu_tro_flutter/page/forecast/forecast_page.dart';
 import 'package:cuu_tro_flutter/page/home_page.dart';
 import 'package:cuu_tro_flutter/page/login/login_page.dart';
+import 'package:cuu_tro_flutter/page/news/news_page.dart';
 import 'package:cuu_tro_flutter/page/register/detail/register_detail.dart';
 import 'package:cuu_tro_flutter/page/register/location/location_page.dart';
 import 'package:cuu_tro_flutter/page/register/select_role/role_page.dart';
@@ -41,5 +42,7 @@ class CustomRoute {
 
     //ACCOUNT PAGE
     GetPage(name: AccountPage.routeName, page: () => AccountPage()),
+
+    GetPage(name: NewsPage.routeName, page: ()=>NewsPage())
   ];
 }

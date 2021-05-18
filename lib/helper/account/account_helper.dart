@@ -3,13 +3,11 @@ import 'package:cuu_tro_flutter/getx/account/account.dart';
 import 'package:dio/dio.dart';
 
 class AccountHelper{
-  static Future<void> getAll() async{
+  static Future<List<Account>> getAll() async{
      var response = await new Dio().get(APICommon.baseUrl);
      List<dynamic> accounts = response.data;
-     List<Account>acocunt_des= accounts.map((e) => Account.fromJson(e)).toList();
-     for(Account acc in acocunt_des){
-       print(acc.avatarUrl);
-    }
+     List<Account>accocunt_des= accounts.map((e) => Account.fromJson(e)).toList();
+     return accocunt_des;
   }
   static Future<Account> getById(String id ) async{
     var response = await new Dio().get(APICommon.baseUrl+"/"+id);

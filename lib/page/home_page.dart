@@ -2,8 +2,10 @@ import 'package:bottom_bars/bottom_bars.dart';
 import 'package:cuu_tro_flutter/getx/account/account_controller.dart';
 import 'package:cuu_tro_flutter/getx/expanded/expanded_controller.dart';
 import 'package:cuu_tro_flutter/getx/form/errors_login_form_ctrl.dart';
+import 'package:cuu_tro_flutter/getx/news/news_controller.dart';
 import 'package:cuu_tro_flutter/getx/register_stepper_controller.dart';
 import 'package:cuu_tro_flutter/getx/shared_preference/shared_preference_ctrl.dart';
+import 'package:cuu_tro_flutter/grpc/hello/hello_grpc.dart';
 import 'package:cuu_tro_flutter/page/account/account_page.dart';
 import 'package:cuu_tro_flutter/page/forecast/forecast_page.dart';
 import 'package:cuu_tro_flutter/page/news/news_page.dart';
@@ -23,7 +25,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   static final String oneSignalId = "648898a1-1861-467d-81f4-9dee88aba5eb";
 
   AccountController accountController = Get.put(AccountController());
@@ -31,13 +32,8 @@ class _HomePageState extends State<HomePage> {
   RegisterStepperCtrl registerStepperCtrl = Get.put(RegisterStepperCtrl());
   ErrorsLoginFormCtrl errorsLoginFormCtrl = Get.put(ErrorsLoginFormCtrl());
   ExpandedController expandedController = Get.put(ExpandedController());
-  @override
-  void initState()  {
-    // TODO: implement initState
-    super.initState();
-    initPlatformState();
-    sharedPreferenceCtrl.getAccount();
-  }
+  NewsCtrl newsCtrl = Get.put(NewsCtrl());
+
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +77,6 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey,
             activeColor: Colors.green,
           ),
-
         ),
       ],
     );
@@ -95,7 +90,7 @@ class _HomePageState extends State<HomePage> {
       var message = openedResult.notification.payload.additionalData;
       Get.toNamed(RegisterStepper.routeName);
     });
-    OneSignal.shared.getPermissionSubscriptionState().then((value){
+    OneSignal.shared.getPermissionSubscriptionState().then((value) {
       // playerIds= value.subscriptionStatus.userId;
       // pushToken= value.subscriptionStatus.pushToken;
     });

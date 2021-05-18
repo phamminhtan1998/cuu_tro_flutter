@@ -1,5 +1,5 @@
 Câu lệnh  tọa class trong dart từ proto file sử dụng protoc
-        protoc --dart_out=grpc:^Cb/grpc -Iprotos protos/route_guide.proto
+        protoc --dart_out=grpc:lib/grpc -Iprotos protos/helloworld.proto
 
 Cài đặt protoc tham khảo tại :
         https://grpc.io/docs/languages/dart/quickstart/

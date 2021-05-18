@@ -1,6 +1,8 @@
 
+import 'package:cuu_tro_flutter/grpc/hello/hello_grpc.dart';
 import 'package:cuu_tro_flutter/page/home_page.dart';
 import 'package:cuu_tro_flutter/page/login/login_page.dart';
+import 'package:cuu_tro_flutter/page/news/news_page.dart';
 import 'package:cuu_tro_flutter/page/register/detail/register_detail.dart';
 import 'package:cuu_tro_flutter/page/stepper/register_stepper.dart';
 import 'package:cuu_tro_flutter/router/custom_route.dart';
@@ -24,7 +26,7 @@ void main() {
         appBarTheme: AppBarTheme(
           color: CustomeColors.kPrimaryColor,
         )),
-    initialRoute: HomePage.routeName,
+    initialRoute: NewsPage.routeName,
     getPages: CustomRoute.routes,
     defaultTransition: Transition.rightToLeft,
     debugShowCheckedModeBanner: false,
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
 
     return MaterialApp(
       title: 'Flutter Demo',
